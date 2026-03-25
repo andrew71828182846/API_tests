@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="75f76183-7aa0-4737-8538-2bfea6e0b057" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Module5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3BM0Tsl9rO7yJMnWLWwIWrrn9aN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.pytest for src.main.api.tests.create_accaunt_test.TestCreateAccaunt.test_create_accaunt.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.create_user_test.TestCreateUser.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.create_user_test.TestCreateUser.test_create_user_invalid.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.delete_all_test.DeleteAllTest.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.delete_all_test.DeleteAllTest.test_delete_all_test.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.delete_all_test.TestDeleteAll.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.login_user_test.TestLoginUser.test_login_admin.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.login_user_test.TestLoginUser.test_login_user.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.repay_credit_test.TestRepayCredit.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.response_get_credit_test.TestGetCredit.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.transfer_funds_test.TestTransferFunds.executor": "Run",
+    "Python tests.pytest for src.main.api.tests.up_u_balance_test.Test_up_u_balance.executor": "Run",
+    "Python.create_user_test.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python tests.pytest for src.main.api.tests.repay_credit_test.TestRepayCredit">
+    <configuration name="pytest for src.main.api.tests.delete_all_test.TestDeleteAll" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Module5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.main.api.tests.delete_all_test.TestDeleteAll&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for src.main.api.tests.repay_credit_test.TestRepayCredit" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Module5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.main.api.tests.repay_credit_test.TestRepayCredit&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for src.main.api.tests.response_get_credit_test.TestGetCredit" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Module5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.main.api.tests.response_get_credit_test.TestGetCredit&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for src.main.api.tests.transfer_funds_test.TestTransferFunds" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Module5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.main.api.tests.transfer_funds_test.TestTransferFunds&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for src.main.api.tests.up_u_balance_test.Test_up_u_balance" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Module5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.main.api.tests.up_u_balance_test.Test_up_u_balance&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for src.main.api.tests.repay_credit_test.TestRepayCredit" />
+        <item itemvalue="Python tests.pytest for src.main.api.tests.delete_all_test.TestDeleteAll" />
+        <item itemvalue="Python tests.pytest for src.main.api.tests.response_get_credit_test.TestGetCredit" />
+        <item itemvalue="Python tests.pytest for src.main.api.tests.transfer_funds_test.TestTransferFunds" />
+        <item itemvalue="Python tests.pytest for src.main.api.tests.up_u_balance_test.Test_up_u_balance" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75f76183-7aa0-4737-8538-2bfea6e0b057" name="Changes" comment="" />
+      <created>1774283643412</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1774283643412</updated>
+      <workItem from="1774283644492" duration="1396000" />
+      <workItem from="1774285078346" duration="14034000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_create_accaunt_test_TestCreateAccaunt_test_create_accaunt.coverage" NAME="pytest for src.main.api.tests.create_accaunt_test.TestCreateAccaunt.test_create_accaunt Coverage Results" MODIFIED="1774371833934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_delete_all_test_DeleteAllTest_test_delete_all_test.coverage" NAME="pytest for src.main.api.tests.delete_all_test.DeleteAllTest.test_delete_all_test Coverage Results" MODIFIED="1774372547810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$main.coverage" NAME="main Coverage Results" MODIFIED="1774283674172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_create_user_test_TestCreateUser.coverage" NAME="pytest for src.main.api.tests.create_user_test.TestCreateUser Coverage Results" MODIFIED="1774286187429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_repay_credit_test_TestRepayCredit.coverage" NAME="pytest for src.main.api.tests.repay_credit_test.TestRepayCredit Coverage Results" MODIFIED="1774461308794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_delete_all_test_DeleteAllTest.coverage" NAME="pytest for src.main.api.tests.delete_all_test.DeleteAllTest Coverage Results" MODIFIED="1774372595591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_transfer_funds_test_TestTransferFunds.coverage" NAME="pytest for src.main.api.tests.transfer_funds_test.TestTransferFunds Coverage Results" MODIFIED="1774376688631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_delete_all_test_TestDeleteAll.coverage" NAME="pytest for src.main.api.tests.delete_all_test.TestDeleteAll Coverage Results" MODIFIED="1774461303243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$create_user_test.coverage" NAME="create_user_test Coverage Results" MODIFIED="1774285944174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main/api/tests" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_login_user_test_TestLoginUser_test_login_user.coverage" NAME="pytest for src.main.api.tests.login_user_test.TestLoginUser.test_login_user Coverage Results" MODIFIED="1774288461923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_up_u_balance_test_Test_up_u_balance.coverage" NAME="pytest for src.main.api.tests.up_u_balance_test.Test_up_u_balance Coverage Results" MODIFIED="1774376177407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_create_user_test_TestCreateUser_test_create_user_invalid.coverage" NAME="pytest for src.main.api.tests.create_user_test.TestCreateUser.test_create_user_invalid Coverage Results" MODIFIED="1774287768734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_login_user_test_TestLoginUser_test_login_admin.coverage" NAME="pytest for src.main.api.tests.login_user_test.TestLoginUser.test_login_admin Coverage Results" MODIFIED="1774288053050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Module5$pytest_for_src_main_api_tests_response_get_credit_test_TestGetCredit.coverage" NAME="pytest for src.main.api.tests.response_get_credit_test.TestGetCredit Coverage Results" MODIFIED="1774460163367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

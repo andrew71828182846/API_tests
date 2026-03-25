@@ -1,0 +1,84 @@
+import requests
+import pytest
+
+@pytest.mark.api
+class Test_up_u_balance:
+    def test_up_u_balance(self):
+        login_admin_response = requests.post(
+            url="http://localhost:4111/api/auth/token/login",
+            json={
+                "username": "admin",
+                "password": "123456"
+            },
+            headers={
+                "Content-Type": "application/json",
+                "accept": "application/json"
+            }
+        )
+        assert login_admin_response.status_code == 200
+        token = login_admin_response.json().get("token")
+
+        create_user_response = requests.post(
+            url="http://localhost:4111/api/admin/create",
+            json={
+                "username": "Max28",
+                "password": "Pas!sw0rd",
+                "role": "ROLE_USER"
+            },
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {token}"
+            }
+        )
+        assert create_user_response.status_code == 200
+
+        login_user_response = requests.post(
+            url="http://localhost:4111/api/auth/token/login",
+            json={
+                "username": "Max28",
+                "password": "Pas!sw0rd"
+            },
+            headers={
+                "Content-Type": "application/json",
+                "accept": "application/json"
+            }
+        )
+        assert login_user_response.status_code == 200
+        token = login_user_response.json().get("token")
+
+        create_accaunt_response = requests.post(
+            url="http://localhost:4111/api/account/create",
+            headers={
+                "accept": "application/json",
+                "Authorization": f"Bearer {token}"
+            }
+        )
+
+        assert create_accaunt_response.status_code == 201
+        assert create_accaunt_response.json().get("balance") == 0
+
+
+        account_id1 = create_accaunt_response.json().get("id")
+
+        up_u_balance_response_first = requests.post(
+            url = "http://localhost:4111/api/account/deposit",
+            json = {
+                "accountId": account_id1,
+                "amount": 1100
+            },
+            headers = {
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {token}",
+                "accept": "application/json"
+            }
+        )
+
+        assert up_u_balance_response_first.status_code == 200
+        assert up_u_balance_response_first.json().get("balance") == 1100
+
+
+
+
+
+
+
