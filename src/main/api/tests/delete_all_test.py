@@ -1,14 +1,12 @@
 import requests
-
+from src.main.api.models.login_user_request import LoginUserRequest
 
 class TestDeleteAll:
     def test_delete_all_test(self):
+        login_user_request = LoginUserRequest(username="admin", password="123456")
         login_admin_response = requests.post(
             url="http://localhost:4111/api/auth/token/login",
-            json={
-                "username": "admin",
-                "password": "123456"
-            },
+            json=login_user_request.model_dump(),
             headers={
                 "Content-Type": "application/json",
                 "accept": "application/json"
