@@ -12,45 +12,10 @@ from src.main.api.specs.response_specs import ResponseSpecs
 
 @pytest.mark.api
 class TestTransferFunds:
-    def test_transfer_funds(self):
-        create_user_request1 = CreateUserRequest(username="Max3", password="Pas!sw0rd", role="ROLE_USER")
+    def test_transfer_funds(self, api_manager, transfer_test_setup):
+        response = api_manager.user_steps.transfer_funds(
+            transfer_funds_request=transfer_test_setup["transfer_request"],
+            user_credentials=transfer_test_setup["sender_creds"]
+        )
 
-
-        CreateUserRequester(
-            request_spec=RequestSpecs.auth_headers(username="admin", password="123456"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(create_user_request1)
-
-        response1 = CreateAccountRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max3", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post()
-        account_id1 = response1.id
-
-
-        up_u_balance_request = UpUBalanceRequest(accountId=account_id1, amount=1100)
-        UpBalanceRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max3", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(up_u_balance_request)
-
-
-        create_user_request2 = CreateUserRequest(username="Max5", password="Pas!sw0rd", role="ROLE_USER")
-        CreateUserRequester(
-            request_spec=RequestSpecs.auth_headers(username="admin", password="123456"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(create_user_request2)
-
-        response2 = CreateAccountRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max5", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post()
-        account_id2 = response2.id
-
-
-        transfer_funds_request = TransferFundsRequest(fromAccountId=account_id1, toAccountId=account_id2, amount=500.75)
-        TransferFundsRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max3", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(transfer_funds_request)
-
+        assert response.fromAccountIdBalance == transfer_test_setup["expected_sender_balance"]

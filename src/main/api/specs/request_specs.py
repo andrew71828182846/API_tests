@@ -27,15 +27,11 @@ class RequestSpecs:
             token = response_data.token
             headers = RequestSpecs.base_headers()
             headers["Authorization"] = f"Bearer {token}"
-            return {
-                "headers": headers,
-                "base_url":Config.fetch("backendurl"),
-            }
+            return headers
+
+
         raise Exception("Failed to login")
 
     @staticmethod
     def unauth_headers():
-        return {
-            "headers": RequestSpecs.base_headers(),
-            "base_url":Config.fetch("backendurl"),
-        }
+        return RequestSpecs.base_headers()

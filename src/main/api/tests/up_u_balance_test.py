@@ -11,27 +11,10 @@ from src.main.api.specs.response_specs import ResponseSpecs
 
 @pytest.mark.api
 class Test_up_u_balance:
-    def test_up_u_balance(self):
-        create_user_request = CreateUserRequest(username="Max1", password="Pas!sw0rd", role="ROLE_USER")
+    def test_up_u_balance(self, api_manager, create_user_request, up_balance_request):
+        response = api_manager.user_steps.up_balance(up_balance_request=up_balance_request, user_credentials=create_user_request)
 
-        CreateUserRequester(
-            request_spec=RequestSpecs.auth_headers(username="admin", password="123456"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(create_user_request)
-
-        response = CreateAccountRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max1", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post()
-        account_id1 = response.id
-
-
-        up_u_balance_request = UpUBalanceRequest(accountId=account_id1, amount=1100)
-        up_balance_response = UpBalanceRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max1", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(up_u_balance_request)
-        assert up_balance_response.balance == 1100
+        assert response.balance == 1000
 
 
 

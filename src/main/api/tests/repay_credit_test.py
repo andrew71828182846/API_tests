@@ -1,3 +1,5 @@
+from http.client import responses
+
 from src.main.api.models.create_user_request import CreateUserRequest
 from src.main.api.models.get_credit_request import GetCreditRequest
 from src.main.api.models.repay_credit_request import RepayCreditRequest
@@ -10,32 +12,7 @@ from src.main.api.specs.response_specs import ResponseSpecs
 
 
 class TestRepayCredit:
-    def test_repay_credit(self):
-        create_user_request = CreateUserRequest(username="Max88", password="Pas!sw0rd", role="ROLE_CREDIT_SECRET")
+    def test_repay_credit(self, api_manager, repay_credit_request: RepayCreditRequest, credit_user_credentials):
+        response = api_manager.user_steps.repay_credit(credit_user_credentials, repay_credit_request)
 
-        CreateUserRequester(
-            request_spec=RequestSpecs.auth_headers(username="admin", password="123456"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(create_user_request)
-
-        response = CreateAccountRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max88", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post()
-        account_id1 = response.id
-
-        get_credit_request = GetCreditRequest(accountId=account_id1, amount=5000, termMonths=12)
-        credit_response = GetCreditRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max88", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post(get_credit_request)
-
-        creditId = credit_response.creditId
-
-        repay_credit_request = RepayCreditRequest(creditId=creditId, accountId=account_id1, amount=5000)
-        repay_response = RepayCreditRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max88", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(repay_credit_request)
-
-        assert repay_response.amountDeposited == repay_credit_request.amount
+        assert response.amountDeposited == repay_credit_request.amount

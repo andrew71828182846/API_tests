@@ -9,25 +9,11 @@ from src.main.api.specs.response_specs import ResponseSpecs
 
 @pytest.mark.api
 class TestGetCredit:
-    def test_get_credit(self):
-        create_user_request = CreateUserRequest(username="Max345", password="Pas!sw0rd", role="ROLE_CREDIT_SECRET")
-
-        CreateUserRequester(
-            request_spec=RequestSpecs.auth_headers(username="admin", password="123456"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(create_user_request)
-
-        response = CreateAccountRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max345", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post()
-        account_id1 = response.id
-
-        get_credit_request = GetCreditRequest(accountId=account_id1, amount=5000, termMonths=12)
-        credit_response = GetCreditRequester(
-            request_spec=RequestSpecs.auth_headers(username="Max345", password="Pas!sw0rd"),
-            response_spec=ResponseSpecs.request_created()
-        ).post(get_credit_request)
+    def test_get_credit(self, api_manager, credit_user_credentials, get_credit_request):
+        response = api_manager.user_steps.get_credit(
+            user_request=credit_user_credentials,
+            get_credit_request=get_credit_request
+        )
+        assert response.creditId is not None
 
 
-        assert credit_response.termMonths == get_credit_request.termMonths

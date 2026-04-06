@@ -1,5 +1,6 @@
 import pytest
 
+from src.main.api.fixtures.api_fixtures import api_manager
 from src.main.api.models.create_user_request import CreateUserRequest
 from src.main.api.models.login_user_request import LoginUserRequest
 from src.main.api.request.create_user_requester import CreateUserRequester
@@ -11,33 +12,18 @@ from src.main.api.specs.response_specs import ResponseSpecs
 
 @pytest.mark.api
 class TestLoginUser:
-    def test_login_admin(self):
+    def test_login_admin(self, api_manager):
         login_admin_request = LoginUserRequest(username="admin", password="123456")
+        response = api_manager.admin_steps.login_user(login_admin_request)
 
-        response = LoginUserRequester(
-            request_spec=RequestSpecs.unauth_headers(),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(login_admin_request)
 
         assert login_admin_request.username == response.user.username
         assert response.user.role == "ROLE_ADMIN"
 
-    def test_login_user(self):
-        create_user_request = CreateUserRequest(username="Max77", password="Pas!sw0rd", role="ROLE_USER")
+    def test_login_user(self, api_manager, create_user_request):
+        response = api_manager.admin_steps.login_user(create_user_request)
 
-        CreateUserRequester(
-            request_spec=RequestSpecs.auth_headers(username="admin", password="123456"),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(create_user_request)
-
-        login_user_request = LoginUserRequest(username="Max77", password="Pas!sw0rd")
-
-        response = LoginUserRequester(
-            request_spec=RequestSpecs.unauth_headers(),
-            response_spec=ResponseSpecs.request_ok()
-        ).post(login_user_request)
-
-        assert login_user_request.username == response.user.username
+        assert create_user_request.username == response.user.username
         assert response.user.role == "ROLE_USER"
 
 
