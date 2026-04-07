@@ -1,5 +1,4 @@
 import pytest
-
 from src.main.api.classes.api_manager import ApiManager
 
 

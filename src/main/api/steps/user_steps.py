@@ -1,6 +1,3 @@
-from http.client import responses
-
-from requests import post
 from src.main.api.foundation.endpoint import Endpoint
 from src.main.api.foundation.requesters.validate_crud_requester import ValidateCrudRequester
 from src.main.api.models.create_user_request import CreateUserRequest

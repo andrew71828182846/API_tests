@@ -1,5 +1,4 @@
 import requests
-
 from src.main.api.models.repay_credit_request import RepayCreditRequest
 from src.main.api.models.repay_credit_response import RepayCreditResponse
 from src.main.api.request.requester import Requester
