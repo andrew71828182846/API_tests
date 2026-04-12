@@ -1,6 +1,6 @@
 import pytest
 
-from main.api.db.crud.account_crud import AccountCrudDb
+from src.main.api.db.crud.account_crud import AccountCrudDb
 
 
 @pytest.mark.api

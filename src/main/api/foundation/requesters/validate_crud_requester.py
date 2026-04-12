@@ -1,5 +1,6 @@
 from typing import Optional
 import allure
+import requests
 
 from src.main.api.configs.config import Config
 from src.main.api.foundation.http_requester import HttpRequester
@@ -31,4 +32,16 @@ class ValidateCrudRequester(HttpRequester):
         self.response_spec(response)
         return self.endpoint.value.response_model.model_validate(response.json())
 
+    def get(self, item_id: Optional[int] = None) -> Optional[BaseModel]:
+        # Формируем URL корректно: с item_id или без
+        url = f"{Config.fetch('backendurl')}{self.endpoint.value.url}"
+        if item_id is not None:
+            url += f"/{item_id}"
 
+        response = self.crud_requester.get(item_id)
+
+        with allure.step(f"GET {url} and Validated Model"):
+            allure.attach(f"Validated Model: {self.endpoint.value.response_model.__name__}")
+
+        self.response_spec(response)
+        return self.endpoint.value.response_model.model_validate(response.json())

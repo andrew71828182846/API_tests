@@ -83,3 +83,31 @@ def repay_credit_request(api_manager, credit_user_credentials, get_credit_reques
         amount=get_credit_request.amount,
         accountId=get_credit_request.accountId
     )
+
+
+@pytest.fixture
+def user_account_request(api_manager, create_user_request):
+    account_response = api_manager.user_steps.create_account(create_user_request)
+    return {
+        "user_creds": create_user_request,
+        "account_id": account_response.id
+    }
+
+
+@pytest.fixture
+def credit_request_factory(api_manager, credit_user_credentials):
+    def _factory(account_id: int, amount: int = None):
+        if amount is None:
+            amount = random.randint(5000, 15000)
+
+        return GetCreditRequest(
+            accountId=account_id,
+            amount=amount,
+            termMonths=12
+        )
+
+    return _factory
+
+@pytest.fixture
+def user_data():
+    return RandomModelGenerator.generate(CreateUserRequest)

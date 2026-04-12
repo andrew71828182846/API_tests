@@ -1,6 +1,6 @@
 
-from main.api.db.crud.credit_crud import CreditCrudDb
-from main.api.db.crud.repay_credit_crud import TransactionCrudDb
+from src.main.api.db.crud.credit_crud import CreditCrudDb
+from src.main.api.db.crud.repay_credit_crud import TransactionCrudDb
 from src.main.api.models.repay_credit_request import RepayCreditRequest
 
 

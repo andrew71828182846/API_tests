@@ -39,10 +39,24 @@ class CRUDRequester(HttpRequester):
         self.response_spec(response)
         return response
 
-    def delete_all(self) -> Response:
-        response = requests.delete(
-            url=f"{Config.fetch("backendurl")}{self.endpoint.value.url}",
+    def get(self, item_id: Optional[int] = None) -> Response:
+        url = f"{Config.fetch('backendurl')}{self.endpoint.value.url}"
+        if item_id is not None:
+            url += f"/{item_id}"
+
+        with allure.step(f"GET {url}"):
+            pass
+
+        response = requests.get(
+            url=url,
             headers=self.request_spec
         )
+
+        allure.attach(
+            response.text,
+            "Response Body",
+            allure.attachment_type.JSON
+        )
+
         self.response_spec(response)
         return response

@@ -40,3 +40,10 @@ class AdminSteps(BaseSteps):
             ResponseSpecs.request_ok()
         ).post(login_user_request)
         return response
+
+    def get_all_users(self):
+        return CRUDRequester(
+            RequestSpecs.auth_headers(username="admin", password="123456"),
+            Endpoint.GET_ALL_USERS,
+            ResponseSpecs.request_ok()
+        ).get()

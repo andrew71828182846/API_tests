@@ -50,3 +50,11 @@ class UserSteps(BaseSteps):
             ResponseSpecs.request_ok()
         ).post(repay_credit_request)
         return response
+
+    def get_transactions(self, user_credentials: CreateUserRequest, account_id: int):
+        response = ValidateCrudRequester(
+            RequestSpecs.auth_headers(username=user_credentials.username, password=user_credentials.password),
+            Endpoint.GET_TRANSACTIONS,
+            ResponseSpecs.request_ok()
+        ).get(item_id=account_id)
+        return response

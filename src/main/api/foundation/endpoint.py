@@ -16,7 +16,7 @@ from src.main.api.models.transfer_funds_request import TransferFundsRequest
 from src.main.api.models.transfer_funds_response import TransferFundsResponse
 from src.main.api.models.up_u_balance_request import UpUBalanceRequest
 from src.main.api.models.up_u_balance_response import UpUBalanceResponse
-
+from src.main.api.models.get_transactions_response import TransactionResponse
 
 @dataclass
 class EndpointConfiguration:
@@ -72,4 +72,16 @@ class Endpoint(Enum):
         request_model=RepayCreditRequest,
         url="/credit/repay",
         response_model=RepayCreditResponse
+    )
+
+    GET_ALL_USERS = EndpointConfiguration(
+        request_model=None,
+        url="/admin/users",
+        response_model=None
+    )
+
+    GET_TRANSACTIONS = EndpointConfiguration(
+        request_model=None,
+        url="/account/transactions",
+        response_model=TransactionResponse
     )

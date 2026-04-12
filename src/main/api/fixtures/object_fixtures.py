@@ -14,6 +14,10 @@ def clean_user(objects: List[Any]):
     api_manager = ApiManager(objects)
     for u in objects:
         if isinstance(u, CreateUserResponse):
-            api_manager.admin_steps.delete_user(u.id)
+            try:
+                api_manager.admin_steps.delete_user(u.id)
+            except AssertionError as e:
+                if "404" not in str(e) and "User not found" not in str(e):
+                    raise
         else:
             logging.warning(f"Error in delete user_id: {u.id}")
