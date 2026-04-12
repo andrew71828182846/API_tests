@@ -1,6 +1,5 @@
 import requests
 from requests import Response
-
 from src.main.api.models.login_user_response import LoginUserResponse
 from src.main.api.request.requester import Requester
 from src.main.api.models.login_user_request import LoginUserRequest

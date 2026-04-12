@@ -1,7 +1,5 @@
 import random
-
 import pytest
-
 from src.main.api.generators.model_generator import RandomModelGenerator
 from src.main.api.models.create_user_request import CreateUserRequest
 from src.main.api.models.get_credit_request import GetCreditRequest
@@ -25,14 +23,11 @@ def up_balance_request(api_manager, create_user_request):
         amount=amount
     )
 
-
 @pytest.fixture
 def transfer_funds_request(api_manager, create_user_request):
     sender_account = api_manager.user_steps.create_account(create_user_request)
 
-
     transfer_amount = random.randint(500, 2000)
-
 
     deposit_amount = transfer_amount + 1000
     top_up = UpUBalanceRequest(accountId=sender_account.id, amount=deposit_amount)
@@ -92,7 +87,6 @@ def user_account_request(api_manager, create_user_request):
         "user_creds": create_user_request,
         "account_id": account_response.id
     }
-
 
 @pytest.fixture
 def credit_request_factory(api_manager, credit_user_credentials):

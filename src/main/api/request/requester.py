@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from typing import Dict, Callable
-
 from src.main.api.models.base_model import BaseModel
 
 

@@ -6,6 +6,7 @@ from src.main.api.foundation.http_requester import HttpRequester
 from src.main.api.models.base_model import BaseModel
 import allure
 
+
 class CRUDRequester(HttpRequester):
     def post(self, model: Optional[BaseModel]) -> Response:
         body = model.model_dump() if model is not None else ""
@@ -25,11 +26,8 @@ class CRUDRequester(HttpRequester):
             allure.attachment_type.JSON
         )
 
-
-
         self.response_spec(response)
         return response
-
 
     def delete(self, user_id: int) -> Response:
         response = requests.delete(
@@ -47,16 +45,8 @@ class CRUDRequester(HttpRequester):
         with allure.step(f"GET {url}"):
             pass
 
-        response = requests.get(
-            url=url,
-            headers=self.request_spec
-        )
-
-        allure.attach(
-            response.text,
-            "Response Body",
-            allure.attachment_type.JSON
-        )
+        response = requests.get(url=url, headers=self.request_spec)
+        allure.attach(response.text, "Response Body", allure.attachment_type.JSON)
 
         self.response_spec(response)
         return response

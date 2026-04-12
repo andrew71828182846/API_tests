@@ -2,7 +2,6 @@ from pathlib import Path
 from typing import Any
 
 
-
 class Config:
     _isintance = None
     _dictionary = {}

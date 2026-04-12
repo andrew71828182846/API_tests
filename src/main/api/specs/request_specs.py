@@ -2,8 +2,8 @@ import requests
 from src.main.api.models.login_user_request import LoginUserRequest
 from src.main.api.models.login_user_response import LoginUserResponse
 
-class RequestSpecs:
 
+class RequestSpecs:
     @staticmethod
     def base_headers():
         return {

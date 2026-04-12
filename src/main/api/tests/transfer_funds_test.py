@@ -1,5 +1,4 @@
 import pytest
-
 from src.main.api.db.crud.account_crud import AccountCrudDb
 
 

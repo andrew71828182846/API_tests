@@ -1,5 +1,4 @@
 import pytest
-
 from src.main.api.db.models.repay_credit_table import Transaction
 
 
@@ -13,7 +12,6 @@ class TestUpUBalance:
 
         assert response.balance == float(up_balance_request.amount)
 
-
         transactions = db_session.query(Transaction).filter(
             Transaction.to_account_id == up_balance_request.accountId,
             Transaction.transaction_type == "deposit"
@@ -24,6 +22,7 @@ class TestUpUBalance:
         last_transaction = transactions[-1]
         assert last_transaction.amount == float(up_balance_request.amount), \
             f"Сумма транзакции не совпадает: {last_transaction.amount}"
+
 
     def test_get_transactions_after_deposit(self, api_manager, create_user_request, up_balance_request):
         account_id = up_balance_request.accountId

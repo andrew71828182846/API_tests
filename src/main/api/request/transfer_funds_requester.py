@@ -1,6 +1,5 @@
 import requests
 from requests import Response
-
 from src.main.api.models.transfer_funds_request import TransferFundsRequest
 from src.main.api.models.transfer_funds_response import TransferFundsResponse
 from src.main.api.request.requester import Requester

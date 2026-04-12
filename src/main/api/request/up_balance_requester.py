@@ -1,5 +1,4 @@
 import requests
-
 from src.main.api.models.up_u_balance_request import UpUBalanceRequest
 from src.main.api.models.up_u_balance_response import UpUBalanceResponse
 from src.main.api.request.requester import Requester

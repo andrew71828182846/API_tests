@@ -5,7 +5,6 @@ from src.main.api.models.create_account_response import CreateAccountResponse
 from src.main.api.models.create_user_request import CreateUserRequest
 from src.main.api.models.create_user_response import CreateUserResponse
 from enum import Enum
-
 from src.main.api.models.get_credit_request import GetCreditRequest
 from src.main.api.models.get_credit_response import GetCreditResponse
 from src.main.api.models.login_user_request import LoginUserRequest

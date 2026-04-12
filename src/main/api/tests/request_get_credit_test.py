@@ -1,5 +1,4 @@
 import pytest
-
 from src.main.api.db.crud.credit_crud import CreditCrudDb
 
 
@@ -19,6 +18,7 @@ class TestGetCredit:
         assert credit_in_db.amount == get_credit_request.amount, "credit.amount не совпадает"
         assert credit_in_db.term_months == get_credit_request.termMonths, "credit.term_months не совпадает"
 
+
     def test_credit_only_one_account(self, api_manager, credit_user_credentials, credit_request_factory):
         account1 = api_manager.user_steps.create_account(credit_user_credentials)
         account2 = api_manager.user_steps.create_account(credit_user_credentials)
@@ -31,7 +31,7 @@ class TestGetCredit:
         with pytest.raises(AssertionError, match=expected_error_msg):
             api_manager.user_steps.get_credit(credit_user_credentials, credit_request_factory(account1.id))
 
-        # ПРОВЕРКА 2: Нельзя взять кредит на ДРУГОЙ счёт (у пользователя уже есть активный)
+        # ПРОВЕРКА 2: Нельзя взять кредит на ДРУГОЙ счёт
         with pytest.raises(AssertionError, match=expected_error_msg):
             api_manager.user_steps.get_credit(credit_user_credentials, credit_request_factory(account2.id))
 

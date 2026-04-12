@@ -1,6 +1,5 @@
 import requests
 from requests import Response
-
 from src.main.api.models.get_credit_request import GetCreditRequest
 from src.main.api.models.get_credit_response import GetCreditResponse
 from src.main.api.request.requester import Requester

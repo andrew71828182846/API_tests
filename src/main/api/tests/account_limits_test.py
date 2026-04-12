@@ -1,5 +1,4 @@
 import pytest
-
 from src.main.api.models.up_u_balance_request import UpUBalanceRequest
 from src.main.api.classes.api_manager import ApiManager
 
@@ -14,12 +13,13 @@ class TestAccountLimits:
         with pytest.raises(Exception, match="maximum number of accounts"):
             api_manager.user_steps.create_account(create_user_request)
 
+
     @pytest.mark.parametrize("amount, expected_success", [
-        (999, False),  # Ниже минимума
-        (1000, True),  # Граница Min
-        (5000, True),  # Середина
-        (9000, True),  # Граница Max
-        (9001, False),  # Выше максимума
+        (999, False),
+        (1000, True),
+        (5000, True),
+        (9000, True),
+        (9001, False),
     ])
     def test_deposit_limits(
             self,
@@ -29,11 +29,8 @@ class TestAccountLimits:
             amount: int,
             expected_success: bool
     ):
-        # Arrange: создаем аккаунт (пользователь уже создан фикстурой create_user_request)
         account = api_manager.user_steps.create_account(create_user_request)
 
-        # Модифицируем фикстуру: подменяем amount, сохраняя accountId
-        # model_copy — стандарт Pydantic v2 для создания измененной копии
         test_request = up_balance_request.model_copy(update={
             "accountId": account.id,
             "amount": amount

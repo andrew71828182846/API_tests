@@ -1,6 +1,5 @@
 import pytest
 from sqlalchemy.orm import Session
-
 from src.main.api.db.crud.user_crud import UserCrudDb
 from src.main.api.fixtures.api_fixtures import ApiManager
 from src.main.api.models.login_user_request import LoginUserRequest
@@ -12,7 +11,6 @@ class TestLoginUser:
         login_admin_request = LoginUserRequest(username="admin", password="123456")
         response = api_manager.admin_steps.login_user(login_admin_request)
 
-
         assert login_admin_request.username == response.user.username
         assert response.user.role == "ROLE_ADMIN"
 
@@ -20,6 +18,7 @@ class TestLoginUser:
         assert user_from_db is not None, "Пользователь admin не найден в БД"
         assert user_from_db.role == "ROLE_ADMIN", "Роль admin в БД не совпадает"
         assert user_from_db.deleted_at is None, "Пользователь admin удален"
+
 
     def test_login_user(self, api_manager, create_user_request, db_session):
         response = api_manager.admin_steps.login_user(create_user_request)
