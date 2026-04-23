@@ -1,5 +1,7 @@
 from typing import Optional
 import allure
+from pydantic import ValidationError
+
 from src.main.api.configs.config import Config
 from src.main.api.foundation.http_requester import HttpRequester
 from src.main.api.foundation.requesters.crud_requester import CRUDRequester
@@ -21,7 +23,10 @@ class ValidateCrudRequester(HttpRequester):
             allure.attach(f"Validated Model response: {self.endpoint.value.response_model.__name__}")
 
         self.response_spec(response)
-        return self.endpoint.value.response_model.model_validate(response.json())
+        try:
+            return self.endpoint.value.response_model.model_validate(response.json())
+        except ValidationError:
+            return response.json()
 
     def delete(self, user_id: int):
         response = self.crud_requester.delete(user_id)

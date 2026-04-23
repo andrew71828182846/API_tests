@@ -1,10 +1,14 @@
+from typing import Any
+
 import pytest
+from sqlalchemy.orm import Session
+from src.main.api.classes.api_manager import ApiManager
 from src.main.api.db.crud.account_crud import AccountCrudDb
 
 
 @pytest.mark.api
 class TestTransferFunds:
-    def test_transfer_funds(self, api_manager, transfer_funds_request, db_session):
+    def test_transfer_funds(self, api_manager: ApiManager, transfer_funds_request: dict[str, Any], db_session: Session):
         response = api_manager.user_steps.transfer_funds(
             transfer_funds_request=transfer_funds_request["transfer_request"],
             user_credentials=transfer_funds_request["sender_creds"]

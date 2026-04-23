@@ -11,19 +11,21 @@ from src.main.api.steps.base_steps import BaseSteps
 
 
 class UserSteps(BaseSteps):
-    def create_account(self, create_user_request: CreateUserRequest):
+    def create_account(self, create_user_request: CreateUserRequest, response_spec=None):
+        spec = response_spec or ResponseSpecs.request_created()
         response = ValidateCrudRequester(
             RequestSpecs.auth_headers(username=create_user_request.username, password=create_user_request.password),
             Endpoint.CREATE_ACCOUNT,
-            ResponseSpecs.request_created()
+            spec
         ).post()
         return response
 
-    def up_balance(self, user_credentials: CreateUserRequest, up_balance_request: UpUBalanceRequest):
+    def up_balance(self, user_credentials: CreateUserRequest, up_balance_request: UpUBalanceRequest, response_spec=None):
+        spec = response_spec or ResponseSpecs.request_ok()
         response = ValidateCrudRequester(
             RequestSpecs.auth_headers(username=user_credentials.username, password=user_credentials.password),
             Endpoint.UP_BALANCE,
-            ResponseSpecs.request_ok()
+            spec
         ).post(up_balance_request)
         return response
 
@@ -35,11 +37,12 @@ class UserSteps(BaseSteps):
         ).post(transfer_funds_request)
         return response
 
-    def get_credit(self, user_request, get_credit_request: GetCreditRequest):
+    def get_credit(self, user_request, get_credit_request: GetCreditRequest, response_spec=None):
+        spec = response_spec or ResponseSpecs.request_created()
         response = ValidateCrudRequester(
             RequestSpecs.auth_headers(username=user_request.username, password=user_request.password),
             Endpoint.GET_CREDIT,
-            ResponseSpecs.request_created()
+            spec
         ).post(get_credit_request)
         return response
 

@@ -1,7 +1,6 @@
 import pytest
 from sqlalchemy.orm import Session
 from src.main.api.classes.api_manager import ApiManager
-from src.main.api.fixtures.db_fixture import db_session
 from src.main.api.models.create_user_request import CreateUserRequest
 from src.main.api.db.crud.account_crud import AccountCrudDb as Account
 
