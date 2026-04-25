@@ -1,8 +1,9 @@
 from playwright.sync_api import Page, expect
+from main.ui.utils.constants import Urls
 
 
 class BasketPage:
-    URL = "https://www.saucedemo.com/cart.html"
+    URL = Urls.CART
 
     def __init__(self, page: Page):
         self.page = page

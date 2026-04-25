@@ -1,19 +1,21 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
+from main.ui.pages.base_page import BasePage
+from main.ui.utils.constants import Urls
 
 
-class CatalogPage:
-    URL = "https://www.saucedemo.com"
+class CatalogPage(BasePage):
+    URL = Urls.BASE
 
     def __init__(self, page: Page):
+        super().__init__(page)
         self.page = page
         self.product_cards = page.locator(".inventory_item")
         self.sort_select = page.locator(".product_sort_container")
         self.cart_badge = page.locator(".shopping_cart_badge")
         self.menu_button = page.locator("#react-burger-menu-btn")
         self.logout_link = page.locator("#logout_sidebar_link")
-        self.username_input = page.get_by_placeholder("Username")
-        self.password_input = page.get_by_placeholder("Password")
-        self.login_button = page.locator("#login-button")
+
+
 
     def open(self):
         self.page.goto(self.URL)
@@ -45,7 +47,7 @@ class CatalogPage:
             button.click()
         return button
 
-    def get_product_count(self) -> int:
+    def get_products_count(self) -> int:
         return self.product_cards.count()
 
     def get_product_names(self) -> list[str]:

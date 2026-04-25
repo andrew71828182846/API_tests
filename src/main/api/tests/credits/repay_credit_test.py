@@ -37,19 +37,4 @@ class TestRepayCredit:
         assert credit_after.amount == credit_before.amount
         assert credit_after.created_at == credit_before.created_at
 
-        def pig_it(text):
-            splitted = text.split()
-            for i in splitted:
-                i = i[1:] + i[:-1] + 'ay'
 
-            def pig_it(text):
-                arr = []
-                splitted = text.split()
-                for i in splitted:
-                    if i.isalfa():
-                        arr.append(i)
-                    else:
-                        i = i[1:] + i[:1] + 'ay'
-                        arr.append(i)
-                unsplitted = ' '.join(arr)
-                return unsplitted

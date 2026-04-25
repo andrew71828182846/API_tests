@@ -1,0 +1,8 @@
+allure_python_commons==2.15.3
+playwright==1.58.0
+pydantic==2.13.3
+pytest==9.0.2
+Requests==2.33.1
+rstr==3.2.2
+SQLAlchemy==2.0.49
+typing_extensions==4.15.0
